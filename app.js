@@ -2,6 +2,7 @@ const express = require('express');
 const dotevn = require('dotenv');
 const connectDB = require('./config/db');
 
+
 //load config
 dotevn.config({ path: './config/config.env'})
 

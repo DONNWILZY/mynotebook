@@ -1,11 +1,11 @@
 const mongoose = require ('mongoose');
-
+mongoose.set('strictQuery', false);
 const connectDB = async () =>{
     try{
-        const conn = await mongoose.connect(process.env.MONGO_URL || mongoose.connect('mongodb://127.0.0.1:27017/member'), {
+        const conn = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlparser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
+            useUnifiedTopology: true
+           // useFindAndModify: false
 
         })
 
