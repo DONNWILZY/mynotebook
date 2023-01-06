@@ -4,9 +4,9 @@
   "description": "ONLINE NOTE BOOK FOR JOTTING",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=developmet nodemon app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE-MODULE=production node pp"
+    "start": "cross-env NODE-MODULE=production nodemon pp"
   },
   "author": "EFFIONG GODSWILL",
   "license": "ISC",
