@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express');
 const dotevn = require('dotenv');
 const morgan = require('morgan');
@@ -40,7 +41,6 @@ app.engine(
   app.set('view engine', '.hbs');
 /*
 app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs'}));
-
 //  app.set('views', 'views'); 
 */
 
@@ -51,6 +51,7 @@ const PORT = process.env.PORT || 3000
 //Route
 app.use('/', require('./routes/index'))
 
-
+//static folde
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(PORT,()=>console.log(`PORT ${PORT} is active || 127.00.1/${PORT}`))
