@@ -3,7 +3,19 @@ const express = require('express');
 const dotevn = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
+const passport = require('passport');
+const session = require('express-session')
 const mongoose = require('mongoose');
+
+//load config
+dotevn.config({ path: './config/config.env'});
+
+//express-session middle-ware
+
+
+//passport
+require('./config/passport')(passport);
+
 
 //db linking
 /*
@@ -18,8 +30,9 @@ db.once('open',()=>{
 */
 
 
-//load config
-dotevn.config({ path: './config/config.env'})
+
+
+
 
 //connectDB()
 const app = express();
@@ -43,6 +56,19 @@ app.engine(
 app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs'}));
 //  app.set('views', 'views'); 
 */
+
+ //sessions
+ app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}))
+
+//passpot middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 
 
 //port
