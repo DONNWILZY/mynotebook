@@ -10,9 +10,9 @@ router.get('/google', passport.authenticate('google', {scope: ['profile']}))
 
 
 // google auth call back route
-//route GET/ 
-router.get('/register', (req, res)=>{
-    res.render('register.hbs');
+//route GET/ /auth/google/callback
+router.get('/google/callback', passport.authenticate('google', {failureRedirect: '/'}), (req, res)=>{
+    res.redirect('/dashboard')
 })
 
 //dashboad paage
