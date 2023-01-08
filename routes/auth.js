@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/google', passport.authenticate('google', {scope: ['profile']}))
 
 
-//call back route
+// google auth call back route
 //route GET/ 
 router.get('/register', (req, res)=>{
     res.render('register.hbs');
