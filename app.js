@@ -74,8 +74,9 @@ app.use(passport.session())
 //port
 const PORT = process.env.PORT || 3000
 
-//Route
+//Routes
 app.use('/', require('./routes/index'))
+app.use('/auth', require('./routes/auth'))
 
 //static folde
 app.use(express.static(path.join(__dirname, 'public')))
