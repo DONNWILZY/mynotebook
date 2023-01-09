@@ -6,6 +6,7 @@ const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session')
 const mongoose = require('mongoose');
+const User = require('./models/User');
 
 //load config
 dotevn.config({ path: './config/config.env'});
@@ -18,23 +19,22 @@ require('./config/passport')(passport);
 
 
 //db linking
-/*
 const connectDB = require('./config/db') || mongoose.connect('mongodb://127.0.0.1:27017/member', {useNewUrlParser:true})
 const db = mongoose.connection;
 db.on('err', ()=>{
     console.log('error in connection')
 })
 db.once('open',()=>{
-    console.log('connected')
+    console.log(' local db connected')
 })
-*/
 
 
 
 
 
 
-//connectDB()
+
+connectDB()
 const app = express();
 
 //logging 

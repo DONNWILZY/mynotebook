@@ -15,11 +15,7 @@ router.get('/google/callback', passport.authenticate('google', {failureRedirect:
     res.redirect('/dashboard')
 })
 
-//dashboad paage
-//route GET/ 
-router.get('/dashboard', (req, res)=>{
-    res.render('dashboard.hbs');
-})
+
 
 
 module.exports = router;
