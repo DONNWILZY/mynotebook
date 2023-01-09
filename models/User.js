@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
 
     dispayName:{
         type: String,
-        required: true
+        required: false
     },
 
     firstName:{
@@ -28,6 +28,11 @@ const UserSchema = new mongoose.Schema({
     },
 
     image:{
+        type: String
+    },
+
+
+    email:{
         type: String
     },
 
