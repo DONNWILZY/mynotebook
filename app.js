@@ -1,12 +1,13 @@
 const path = require('path')
 const express = require('express');
+const mongoose = require('mongoose');
 const dotevn = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const mongoose = require('mongoose');
+
 const User = require('./models/User');
 
 //load config
@@ -57,6 +58,7 @@ app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs'}));
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false
+  store: new MongoStore({mongooseConnection: mongoose.connection })
 }))
 
 //passpot middleware
