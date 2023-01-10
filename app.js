@@ -4,7 +4,8 @@ const dotevn = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const passport = require('passport');
-const session = require('express-session')
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 const User = require('./models/User');
 
