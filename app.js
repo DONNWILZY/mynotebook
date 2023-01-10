@@ -13,7 +13,6 @@ dotevn.config({ path: './config/config.env'});
 
 //express-session middle-ware
 
-
 //passport
 require('./config/passport')(passport);
 
@@ -28,12 +27,7 @@ db.once('open',()=>{
     console.log(' local db connected')
 })
 
-
-
-
-
-
-
+//connect db
 connectDB()
 const app = express();
 
