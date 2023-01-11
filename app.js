@@ -57,8 +57,8 @@ app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs'}));
  app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: false
-  store: new MongoStore({mongooseConnection: mongoose.connection })
+  saveUninitialized: false, 
+  store: new MongoStore({mongooseConnection: mongoose.connection})
 }))
 
 //passpot middleware

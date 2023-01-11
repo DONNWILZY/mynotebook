@@ -4,7 +4,7 @@ const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
 
 //loggin paage
-router.get('/', (req, res)=>{
+router.get('/', ensureGuest,  (req, res)=>{
     res.render('login', {
         layout: 'login'
     });
@@ -13,7 +13,7 @@ router.get('/', (req, res)=>{
 
 //register paage
 //route GET/ 
-router.get('/register', (req, res)=>{
+router.get('/register', ensureAuth, (req, res)=>{
     res.render('register.hbs');
 })
 

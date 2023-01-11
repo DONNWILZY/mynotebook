@@ -10,5 +10,5 @@ module.exports = {
         if(req.isAuthenticated()){
             res.redirect('/dashboard')
         }
-    },
+    }
 }
