@@ -13,14 +13,14 @@ router.get('/', ensureGuest,  (req, res)=>{
 
 //register paage
 //route GET/ 
-router.get('/register', ensureAuth, (req, res)=>{
+router.get('/register', (req, res)=>{
     res.render('register.hbs');
 })
 
 //dashboad paage
 //route GET/ 
-router.get('/dashboard', (req, res)=>{
-    res.render('dashboard.hbs');
+router.get('/dashboard', ensureAuth, (req, res)=>{
+    res.render('dashboard')
 })
 
 
